@@ -1,9 +1,7 @@
 import axios from "axios";
-import * as dotenv from "dotenv";
-dotenv.config();
 
 const axiosClient = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: "https://dummyjson.com",
   headers: {
     "Content-Type": "application/json",
     "Cache-Control": "no-cache",

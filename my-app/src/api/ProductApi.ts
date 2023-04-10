@@ -10,6 +10,10 @@ const ProductApi = {
     const url = `/products/${id}`
     return axiosClient.get(url)
   },
+  getAllCategory(): Promise<string[]> {
+    const url = `/products/categories`
+    return axiosClient.get(url)
+  },
   getProductByCategory(category: string): Promise<ListResponse<Product>> {
     const url = `/products/category/${category}`
     return axiosClient.get(url)

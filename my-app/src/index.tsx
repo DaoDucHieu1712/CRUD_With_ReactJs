@@ -9,8 +9,8 @@ import './styles/reset.scss'
 import './styles/responsive.scss'
 import './styles/grid-system.scss'
 import './styles/index.scss'
+import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
-
 const container = document.getElementById('root')!
 const root = createRoot(container)
 

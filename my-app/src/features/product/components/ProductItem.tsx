@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 interface ProductItemProps {
   id: number
-  images: string[]
+  images: string
   title: string
   price: number
 }
@@ -55,7 +55,7 @@ const ProductItem = ({ id, images, title, price }: ProductItemProps) => {
       <ProductItemStyle>
         <div className="product-item">
           <div className="product-image">
-            <img src={images[0]} alt="" />
+            <img src={images} alt="" />
           </div>
           <div className="product-info">
             <p className="product-title">{title}</p>

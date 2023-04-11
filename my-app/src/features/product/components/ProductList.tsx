@@ -14,7 +14,7 @@ const ProductList = () => {
             <Spin />
           ) : (
             products.map((item: Product) => (
-              <ProductItem key={item.id} id={item.id} images={item.images} title={item.title} price={item.price} />
+              <ProductItem key={item.id} id={item.id} images={item.thumbnail} title={item.title} price={item.price} />
             ))
           )}
         </div>

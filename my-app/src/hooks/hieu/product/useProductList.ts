@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Product } from '../../models/Product'
-import ProductApi from '../../api/ProductApi'
+import { Product } from '../../../models/Product'
+import ProductApi from '../../../api/Hieu/ProductApi'
 
 export default function useProductList() {
   const [loading, setLoading] = useState<boolean>(false)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ProductApi from '../../api/ProductApi'
+import ProductApi from '../../../api/Hieu/ProductApi'
 
 export default function useCategoryList() {
   const [categorys, setCategorys] = useState<string[]>([])

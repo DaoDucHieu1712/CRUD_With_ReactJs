@@ -1,4 +1,4 @@
-import { ListResponse, Product } from '../models/Product'
+import { ListResponse, Product } from '../../models/Product'
 import axiosClient from './axiosClient'
 
 const ProductApi = {

@@ -1,30 +1,45 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import { Card, Col, Row } from 'antd'
-import FinanceApi from '../../../../api/Vinh/FinanceApi'
-import { Finance } from '../../../../models/Finance'
+import React, { Fragment, useEffect, useState } from 'react';
+import { Card, Col, Row, Spin } from 'antd';
+import FinanceApi from '../../../../api/Vinh/FinanceApi';
+import { Finance } from '../../../../models/Finance';
+import FinanceItem from './FinanceItem';
 
 const FinanceList = () => {
-  const [financeList, setFinanceList] = useState<Finance[]>([])
+  const [financeList, setFinanceList] = useState<Finance[]>([]);
+
+  // return FinanceApi.getAll() là 1 promise => return response là 1 Finance[] => return Promise<Finance[]>
+  const loadData = (): Promise<Finance[]> => {
+    return FinanceApi.getAll().then((response: Finance[]) => {
+      setFinanceList(response);
+      return response;
+    });
+  };
+
   useEffect(() => {
-    FinanceApi.getAll().then((response: Finance[]) => {
-      setFinanceList(response)
-      console.log(response)
-    })
-  }, [])
+    loadData();
+  }, []);
 
   return (
     <Fragment>
-      {financeList.map((finance: Finance) => (
+      {financeList.length == 0 ? (
+        <Spin />
+      ) : (
         <Row gutter={16}>
-          <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              {finance.description}
-            </Card>
-          </Col>
+          {financeList.map((finance: Finance) => (
+            <FinanceItem
+              id={finance.id}
+              key={finance.id}
+              description={finance.description}
+              createdAt={finance.createdAt}
+              price={finance.price}
+              type={finance.type}
+              onLoad={loadData}
+            />
+          ))}
         </Row>
-      ))}
+      )}
     </Fragment>
-  )
-}
+  );
+};
 
-export default FinanceList
+export default FinanceList;

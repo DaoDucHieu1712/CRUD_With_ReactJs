@@ -14,6 +14,10 @@ const CatApi = {
       const url = `/cats/${id}`;
       return axiosClient.delete(url);
     },
+    update(id: number, cat: Cat): Promise<Cat> {
+      const url = `/cats/${id}`;
+      return axiosClient.put(url, cat);
+    }
   }
   
   

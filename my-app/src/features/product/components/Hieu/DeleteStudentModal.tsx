@@ -1,8 +1,9 @@
-import { Button, Modal } from 'antd'
+import { Button, ConfigProvider, Modal } from 'antd'
 import { useState } from 'react'
 import StudentApi from '../../../../api/Hieu/StudentApi'
 import { toast } from 'react-toastify'
 import styled from 'styled-components'
+import { type } from 'os'
 
 interface DeleteStudentModalProps {
   id: string
@@ -38,9 +39,17 @@ const DeleteStudentModal = ({ id, name, onLoad }: DeleteStudentModalProps) => {
 
   return (
     <DeleteStudentModalStyle>
-      <Button type="primary" onClick={showModal}>
-        Delete
-      </Button>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#fff',
+            colorBgContainer: '#ff4d4f',
+            colorText: '#FFF'
+          }
+        }}
+      >
+        <Button onClick={showModal}>Delete</Button>
+      </ConfigProvider>
       <Modal
         title="Delete Student"
         open={open}

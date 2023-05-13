@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
-const accessTokenKey = 'crow_access_token'
-const refreshTokenKey = 'crow_refresh_token'
+import { User } from '../models/Account'
+const accessTokenKey = 'demo_access_token'
+const refreshTokenKey = 'demo_refresh_token'
 const objCookies = {
   expires: 30,
   domain: 'localhost'
@@ -26,6 +27,11 @@ export const saveToken = (access_token: string | undefined, refresh_token: strin
       domain: 'localhost'
     })
   }
+}
+
+export const getCurrentUser = () => {
+  const CurrentUser: User = JSON.parse(localStorage.getItem('user') || 'null')
+  return CurrentUser
 }
 
 export const getToken = () => {

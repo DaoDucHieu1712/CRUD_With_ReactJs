@@ -39,7 +39,7 @@ const SignInPage = () => {
           ]}
           hasFeedback
         >
-          <Input size="large" placeholder="enter youe email" />
+          <Input size="large" placeholder="enter your email" />
         </Form.Item>
 
         <Form.Item

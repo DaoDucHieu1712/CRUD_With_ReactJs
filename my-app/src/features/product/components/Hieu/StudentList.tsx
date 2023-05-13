@@ -46,6 +46,10 @@ const StudenListStyle = styled.div`
     align-items: center;
     gap: 0 15px;
   }
+
+  .btn-add {
+    margin: 15px;
+  }
 `
 
 const StudentList = () => {
@@ -67,7 +71,7 @@ const StudentList = () => {
   return (
     <StudenListStyle>
       <NavLink to="/add-student">
-        <Button type="primary">Add new Student</Button>
+        <Button className="btn-add">Add new Student</Button>
       </NavLink>
       {loading ? (
         <div>

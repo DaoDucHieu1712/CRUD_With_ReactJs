@@ -12,7 +12,7 @@ export const loginHandler = async (data: any, dispatch: any, navigate: any) => {
     localStorage.setItem('user', JSON.stringify({ accountId: res.accountId, name: res.name }))
     dispatch(authActions.loginSuccess())
     saveToken(res.accessToken, res.refreshToken)
-    navigate('/home')
+    navigate('/')
   } catch (error) {
     dispatch(authActions.loginFailed(`Username or password is wrong !!!!`))
     toast.error(`${error}`)

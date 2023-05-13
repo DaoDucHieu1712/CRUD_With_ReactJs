@@ -42,7 +42,7 @@ const UpdateStudent = () => {
   const onSubmitHandler = async (values: any) => {
     await StudentApi.update(id, values).then(() => {
       toast.success('Update Student successful !!')
-      navigate('/student')
+      navigate('/hieu')
     })
   }
   return (

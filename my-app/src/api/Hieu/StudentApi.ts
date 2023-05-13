@@ -1,6 +1,7 @@
 import { Student } from '../../models/Student'
 import axiosClient from './axiosClient'
 import axiosPrivate from './axiosPrivate'
+
 const StudentApi = {
   getAll(): Promise<Student[]> {
     const url = '/Student'
